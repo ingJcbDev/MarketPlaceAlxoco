@@ -1,0 +1,11 @@
+git init  // -- iniciar un nuevo repositorio
+
+git remote add origin https://github.com/ingJcbDev/MarketPlaceAlxoco.git //-- Para agregar el repositorio remoto 
+
+git config --list // se ve la configuracion del repositorio 
+
+-- se agreran usuario y contraseña
+
+git config user.email ing.jcb.dev@gmail.com 
+
+git config user.name ingJcbDev
