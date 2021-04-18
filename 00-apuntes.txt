@@ -1,3 +1,5 @@
+********************************************* Project git inicio *************************************************
+
 git init  // -- iniciar un nuevo repositorio
 
 git remote add origin https://github.com/ingJcbDev/MarketPlaceAlxoco.git //-- Para agregar el repositorio remoto 
@@ -9,3 +11,29 @@ git config --list // se ve la configuracion del repositorio
 git config user.email ing.jcb.dev@gmail.com 
 
 git config user.name ingJcbDev
+
+******************************************** Project git fin *****************************************************
+******************************************* Crear dominio inicio *************************************************
+-- ruta
+C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+-- agragar estas lines con la ruta del proyecto 
+
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/"
+    ServerName localhost
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/DEV/alxoco/api-marketplace"
+    ServerName api.marketplace.com
+</VirtualHost>
+
+-- configuramos dominios locales para que ingrese a buscar los dominios a internet
+
+C:\Windows\System32\drivers\etc\hosts
+
+# localhost name resolution is handled within DNS itself.
+	127.0.0.1       localhost
+	127.0.0.1       api.marketplace.com
+#	::1             localhost

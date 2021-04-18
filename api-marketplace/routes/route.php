@@ -1,7 +1,7 @@
 <?php
 
-$routesArray = explode("/", $_SERVER['REQUEST_URI']);
-$routesArray = array_filter($routesArray);
+$routesArray = explode("/", $_SERVER['REQUEST_URI']); // me captura los indices sin el /
+$routesArray = array_filter($routesArray); // array_filter => y quitele los indices vacios
 
 /* =============================================
 Cuando no se hace ninguna petición a la API

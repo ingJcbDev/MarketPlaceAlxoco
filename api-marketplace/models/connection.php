@@ -1,24 +1,25 @@
-<?php 
+<?php
 
-class Connection{
+class Connection
+{
 
-	static public function connect(){
+    public static function connect()
+    {
 
-		try{
+        try {
 
-			$link = new PDO("mysql:host=localhost;dbname=marketplace","root", "");
+            $link = new PDO("mysql:host=localhost;dbname=marketplace", "root", "123");
 
-			$link->exec("set names utf8");
+            $link->exec("set names utf8");
 
-		}catch(PDOException $e){
+        } catch (PDOException $e) {
 
-			die("Error: ".$e->getMessage());
+            die("Error: " . $e->getMessage());
 
-		}
+        }
 
-		return $link;
-		
-	}
+        return $link;
+
+    }
 
 }
-
