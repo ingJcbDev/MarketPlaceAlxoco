@@ -31,6 +31,9 @@ if (count($routesArray) == 0) {
         Peticiones GET con filtro
         ============================================= */
 
+        // linkTo = Column por la que se va a filtar la tabla
+        // equalTo = Parametro a filtrar
+
         if (isset($_GET["linkTo"]) && isset($_GET["equalTo"]) &&
             !isset($_GET["rel"]) && !isset($_GET["type"])) {
 
@@ -65,10 +68,10 @@ if (count($routesArray) == 0) {
             $response = new GetController();
             $response->getFilterData(explode("?", $routesArray[1])[0], $_GET["linkTo"], $_GET["equalTo"], $orderBy, $orderMode, $startAt, $endAt);
 
-            /* =============================================
-        Peticiones GET entre tablas relacionadas sin filtro
-        ============================================= */
         } else if (isset($_GET["rel"]) && isset($_GET["type"]) && explode("?", $routesArray[1])[0] == "relations" && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])) {
+            /* ================================================
+            Peticiones GET entre tablas relacionadas sin filtro
+            ================================================= */
 
             /* =============================================
             Preguntamos si viene variables de orden
@@ -101,10 +104,10 @@ if (count($routesArray) == 0) {
             $response = new GetController();
             $response->getRelData($_GET["rel"], $_GET["type"], $orderBy, $orderMode, $startAt, $endAt);
 
-            /* =============================================
-        Peticiones GET entre tablas relacionadas con filtro
-        ============================================= */
         } else if (isset($_GET["rel"]) && isset($_GET["type"]) && explode("?", $routesArray[1])[0] == "relations" && isset($_GET["linkTo"]) && isset($_GET["equalTo"])) {
+            /* ================================================
+            Peticiones GET entre tablas relacionadas con filtro
+            ================================================== */
 
             /* =============================================
             Preguntamos si viene variables de orden
